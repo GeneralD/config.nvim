@@ -1,6 +1,6 @@
 return {
 	{
-		"EdenEast/nightfox.nvim",
+		"folke/tokyonight.nvim",
 		lazy = false,
 		opts = {
 			groups = {

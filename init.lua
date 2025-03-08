@@ -26,6 +26,8 @@ require("lazy").setup({
 	},
 }, lazy_config)
 
-vim.cmd("colorscheme nightfox")
+vim.opt.viminfofile = vim.fn.stdpath("data") .. "/viminfo"
+
+vim.cmd("colorscheme tokyonight")
 
 require "config"
