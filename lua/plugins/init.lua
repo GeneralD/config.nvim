@@ -49,6 +49,8 @@ return {
 			view_options = { show_hidden = true },
 			keymaps = {
 				["q"] = { "actions.close", mode = "n" },
+				["<C-_>"] = { "actions.select", opts = { horizontal = true } },
+				["<C-\\>"] = { "actions.select", opts = { vertical = true } },
 			},
 		},
 		dependencies = { { "echasnovski/mini.icons", opts = {} } },
@@ -58,6 +60,7 @@ return {
 		tag = "0.1.8",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		lazy = true,
+		event = "VeryLazy",
 		opts = {
 			defaults = {
 				prompt_prefix = "   ",
@@ -72,9 +75,16 @@ return {
 					width = 0.87,
 					height = 0.80,
 				},
-				--mappings = {
-				--	n = { ["q"] = require("telescope.actions").close },
-				--},
+				mappings = {
+					i = {
+						["<C-_>"] = "select_horizontal",
+						["<C-\\>"] = "select_vertical",
+					},
+					n = {
+						["<C-_>"] = "select_horizontal",
+						["<C-\\>"] = "select_vertical",
+					},
+				},
 			},
 			pickers = {
 				colorscheme = {
@@ -259,7 +269,7 @@ return {
 		-- dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" }, -- if you prefer nvim-web-devicons
 		lazy = true,
 		event = { "BufReadPre", "BufNewFile" },
-		ft = { "markdown", "Avante", "octo" },
+		ft = { "markdown", "Avante", "octo", "codecompanion" },
 		---@module 'render-markdown'
 		---@type render.md.UserConfig
 		opts = {
