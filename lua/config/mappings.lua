@@ -20,6 +20,10 @@ map("v", "<leader>/", "gc", { desc = "Comment line", remap = true })
 ---- oil
 map("n", "-", "<CMD>Oil --float<CR>", { desc = "Open parent directory" })
 
+---- neo-tree
+map("n", "<C-n>", "<CMD>Neotree toggle<CR>", { desc = "Toggle file tree" })
+map("n", "<leader>e", "<CMD>Neotree focus<CR>", { desc = "Focus file tree" })
+
 ---- bufferline
 map("n", "<C-t>", "<CMD>BufferPrevious<CR>", { desc = "prev buffer" })
 map("n", "<C-S-t>", "<CMD>BufferNext<CR>", { desc = "next buffer" })
